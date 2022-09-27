@@ -1,10 +1,20 @@
 public class Board {
     private static final String blank = "_";
+    private static final String[][] currentBoard = new String[3][3];
 
-    public void printBoard(String x, String y,  String currentPlayer) {
+    public void initBoard() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                System.out.print("|_" + blank + "_|");
+                currentBoard[i][j] = blank;
+            }
+        }
+    }
+    public void printBoard(int x, int y,  String currentPlayer) {
+        String target = "";
+        currentBoard[x][y] = currentPlayer;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print("|_" + target + "_|");
             }
             System.out.println();
         }
