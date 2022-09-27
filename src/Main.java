@@ -8,6 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         Board board = new Board();
+        board.initBoard();
         Scanner sc = new Scanner(System.in);
         String strX = sc.nextLine();
         String strY = sc.nextLine();
