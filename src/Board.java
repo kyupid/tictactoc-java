@@ -14,7 +14,7 @@ public class Board {
         currentBoard[x][y] = currentPlayer;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                System.out.print("|_" + target + "_|");
+                System.out.print("|_" + currentBoard[i][j] + "_|");
             }
             System.out.println();
         }
