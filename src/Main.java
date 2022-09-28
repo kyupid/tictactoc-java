@@ -10,17 +10,24 @@ public class Main {
         Board board = new Board();
         board.initBoard();
         Scanner sc = new Scanner(System.in);
-        String strX = sc.nextLine();
-        String strY = sc.nextLine();
-        String player = "";
-        if (currentPlayer.equals(player1)) {
-            currentPlayer = player2;
-         } else {
-            currentPlayer = player1;
-        }
-        int x = Integer.parseInt(strX);
-        int y = Integer.parseInt(strY);
 
-        board.printBoard(x - 1, y - 1, currentPlayer);
+        while (true) {
+            String strX = sc.nextLine();
+            String strY = sc.nextLine();
+            if (currentPlayer.equals(player1)) {
+                currentPlayer = player2;
+            } else {
+                currentPlayer = player1;
+            }
+            int x = Integer.parseInt(strX);
+            int y = Integer.parseInt(strY);
+            board.printBoard(x - 1, y - 1, currentPlayer);
+
+            if (board.isGameOver()) {
+                break;
+            }
+        }
+
+        System.out.println("Game Over");
     }
 }
