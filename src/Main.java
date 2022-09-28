@@ -21,13 +21,7 @@ public class Main {
             }
             int x = Integer.parseInt(strX);
             int y = Integer.parseInt(strY);
-            board.printBoard(x - 1, y - 1, currentPlayer);
-
-            if (board.isGameOver()) {
-                break;
-            }
+            board.move(x - 1, y - 1, currentPlayer);
         }
-
-        System.out.println("Game Over");
     }
 }
