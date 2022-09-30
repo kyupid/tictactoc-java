@@ -14,7 +14,8 @@ public class Board {
         }
         printBoard();
     }
-    private void printBoard(int x, int y,  String currentPlayer) {
+
+    private void printBoard(int x, int y, String currentPlayer) {
         currentBoard[x][y] = currentPlayer;
         for (int i = 0; i < BOARD_LENGTH; i++) {
             for (int j = 0; j < BOARD_LENGTH; j++) {
@@ -30,16 +31,24 @@ public class Board {
         }
         moveCount++;
 
-        // 1. check end condition
+        // check end condition
 
         // 2. check col
 
         // 3. check row
-
+        for (int i = 0; i < BOARD_LENGTH; i++) {
+            if (!currentBoard[x][i].equals(currentPlayer)){
+                System.out.println("currentBoard[x][i]: " + currentBoard[x][i]);
+                System.out.println("currentPlayer: " + currentPlayer);
+                break;
+            }
+            if (i == BOARD_LENGTH - 1) {
+                //report win for s
+                System.out.println("win");
+            }
+        }
         // 4. check diag
-
         // 5. check anti-diag
-
         // 6. check draw
 
         printBoard(x, y, currentPlayer);

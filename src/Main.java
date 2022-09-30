@@ -12,8 +12,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
-            String strX = sc.nextLine();
             String strY = sc.nextLine();
+            String strX = sc.nextLine();
             if (currentPlayer.equals(player1)) {
                 currentPlayer = player2;
             } else {
